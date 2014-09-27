@@ -25,6 +25,8 @@
 		C3CEFB9E19D757A100C73605 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CEFB9D19D757A100C73605 /* SystemConfiguration.framework */; };
 		C3CEFBA019D757D200C73605 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CEFB9F19D757D200C73605 /* Parse.framework */; };
 		C3CEFBA519D758C400C73605 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CEFBA419D758C400C73605 /* Bolts.framework */; };
+		C3CEFBA719D7662100C73605 /* drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CEFBA619D7662100C73605 /* drink.swift */; };
+		C3CEFBA919D7669A00C73605 /* DrinkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CEFBA819D7669A00C73605 /* DrinkTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		C3CEFB9F19D757D200C73605 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		C3CEFBA119D7580000C73605 /* barkeepr-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "barkeepr-Bridging-Header.h"; sourceTree = "<group>"; };
 		C3CEFBA419D758C400C73605 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		C3CEFBA619D7662100C73605 /* drink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = drink.swift; sourceTree = "<group>"; };
+		C3CEFBA819D7669A00C73605 /* DrinkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,8 @@
 				C3CEFB7219D7574200C73605 /* Images.xcassets */,
 				C3CEFB7419D7574200C73605 /* LaunchScreen.xib */,
 				C3CEFB6919D7574200C73605 /* Supporting Files */,
+				C3CEFBA619D7662100C73605 /* drink.swift */,
+				C3CEFBA819D7669A00C73605 /* DrinkTableViewController.swift */,
 			);
 			path = barkeepr;
 			sourceTree = "<group>";
@@ -262,8 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3CEFBA919D7669A00C73605 /* DrinkTableViewController.swift in Sources */,
 				C3CEFB6E19D7574200C73605 /* ViewController.swift in Sources */,
 				C3CEFB6C19D7574200C73605 /* AppDelegate.swift in Sources */,
+				C3CEFBA719D7662100C73605 /* drink.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
