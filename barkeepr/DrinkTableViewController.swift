@@ -18,14 +18,14 @@ class DrinkTableViewController : UITableViewController, UISearchBarDelegate, UIS
         // Sample Data for drinkArray
         self.drinks = [Drink(category:"whiskey", name:"Old Fashioned"),
             Drink(category:"gin", name:"Martini"),
-            Drink(category:"tequila", name:"Margarita"),
+            Drink(category:"other", name:"Margarita"),
             Drink(category:"whiskey", name:"Irish Coffee"),
             Drink(category:"gin", name:"Negroni"),
             Drink(category:"bourbon", name:"Mint Julep"),
             Drink(category:"rum", name:"Mai Tai"),
-            Drink(category:"pisco", name:"Pisco Sour"),
-            Drink(category:"vodka", name:"Cosmopolitian"),
-            Drink(category:"vodka", name:"White Russian"),
+            Drink(category:"other", name:"Pisco Sour"),
+            Drink(category:"other", name:"Cosmopolitian"),
+            Drink(category:"other", name:"White Russian"),
             Drink(category:"rum", name:"Mojito")]
         
         // Reload the table

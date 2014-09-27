@@ -12,10 +12,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" text="Search for booze" id="Uxe-gz-Scu">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" text="Search for booze" showsScopeBar="YES" id="Uxe-gz-Scu">
+                            <rect key="frame" x="0.0" y="64" width="600" height="88"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>All</string>
+                                <string>Whiskey</string>
+                                <string>Gin</string>
+                                <string>Bourbon</string>
+                                <string>Rum</string>
+                                <string>Other</string>
+                            </scopeButtonTitles>
                             <connections>
                                 <outlet property="delegate" destination="in6-8x-2Ly" id="RXY-Ns-Wvg"/>
                             </connections>
@@ -36,7 +44,7 @@
                     <navigationItem key="navigationItem" title="DrinkSearch" id="FMd-7m-KIY"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="AS6-mR-eBq" id="QHc-jL-Z83"/>
-                        <segue destination="tC3-ea-WVe" kind="show" id="HyH-6d-ZkK"/>
+                        <segue destination="tC3-ea-WVe" kind="show" identifier="drinkDetail" id="HyH-6d-ZkK"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6FB-qY-neZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
