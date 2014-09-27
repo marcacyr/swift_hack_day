@@ -15,11 +15,19 @@ class DrinkTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        // Sample Data for drinkArray
+        self.drinks = [Drink(category:"Chocolate", name:"chocolate Bar"),
+            Drink(category:"Chocolate", name:"chocolate Chip"),
+            Drink(category:"Chocolate", name:"dark chocolate"),
+            Drink(category:"Hard", name:"lollipop"),
+            Drink(category:"Hard", name:"candy cane"),
+            Drink(category:"Hard", name:"jaw breaker"),
+            Drink(category:"Other", name:"caramel"),
+            Drink(category:"Other", name:"sour chew"),
+            Drink(category:"Other", name:"gummi bear")]
+        
+        // Reload the table
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
