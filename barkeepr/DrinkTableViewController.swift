@@ -16,15 +16,17 @@ class DrinkTableViewController: UITableViewController {
         super.viewDidLoad()
 
         // Sample Data for drinkArray
-        self.drinks = [Drink(category:"Chocolate", name:"chocolate Bar"),
-            Drink(category:"Chocolate", name:"chocolate Chip"),
-            Drink(category:"Chocolate", name:"dark chocolate"),
-            Drink(category:"Hard", name:"lollipop"),
-            Drink(category:"Hard", name:"candy cane"),
-            Drink(category:"Hard", name:"jaw breaker"),
-            Drink(category:"Other", name:"caramel"),
-            Drink(category:"Other", name:"sour chew"),
-            Drink(category:"Other", name:"gummi bear")]
+        self.drinks = [Drink(category:"whiskey", name:"Old Fashioned"),
+            Drink(category:"gin", name:"Martini"),
+            Drink(category:"tequila", name:"Margarita"),
+            Drink(category:"whiskey", name:"Irish Coffee"),
+            Drink(category:"gin", name:"Negroni"),
+            Drink(category:"bourbon", name:"Mint Julep"),
+            Drink(category:"rum", name:"Mai Tai"),
+            Drink(category:"pisco", name:"Pisco Sour"),
+            Drink(category:"vodka", name:"Cosmopolitian"),
+            Drink(category:"vodka", name:"White Russian"),
+            Drink(category:"rum", name:"Mojito")]
         
         // Reload the table
         self.tableView.reloadData()
