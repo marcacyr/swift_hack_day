@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C3CEFB6C19D7574200C73605 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CEFB6B19D7574200C73605 /* AppDelegate.swift */; };
-		C3CEFB6E19D7574200C73605 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CEFB6D19D7574200C73605 /* ViewController.swift */; };
 		C3CEFB7119D7574200C73605 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3CEFB6F19D7574200C73605 /* Main.storyboard */; };
 		C3CEFB7319D7574200C73605 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3CEFB7219D7574200C73605 /* Images.xcassets */; };
 		C3CEFB7619D7574200C73605 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3CEFB7419D7574200C73605 /* LaunchScreen.xib */; };
@@ -43,7 +42,6 @@
 		C3CEFB6619D7574200C73605 /* barkeepr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = barkeepr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3CEFB6A19D7574200C73605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3CEFB6B19D7574200C73605 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C3CEFB6D19D7574200C73605 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C3CEFB7019D7574200C73605 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C3CEFB7219D7574200C73605 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C3CEFB7519D7574200C73605 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				C3CEFB6B19D7574200C73605 /* AppDelegate.swift */,
-				C3CEFB6D19D7574200C73605 /* ViewController.swift */,
 				C3CEFB6F19D7574200C73605 /* Main.storyboard */,
 				C3CEFB7219D7574200C73605 /* Images.xcassets */,
 				C3CEFB7419D7574200C73605 /* LaunchScreen.xib */,
@@ -269,7 +266,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3CEFBA919D7669A00C73605 /* DrinkTableViewController.swift in Sources */,
-				C3CEFB6E19D7574200C73605 /* ViewController.swift in Sources */,
 				C3CEFB6C19D7574200C73605 /* AppDelegate.swift in Sources */,
 				C3CEFBA719D7662100C73605 /* drink.swift in Sources */,
 			);

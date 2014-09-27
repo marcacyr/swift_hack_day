@@ -8,13 +8,13 @@
 
 import UIKit
 
-class DrinkTableViewController: UITableViewController {
+class DrinkTableViewController : UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate {
     
     var drinks = [Drink]()
-
+    
+    var filteredDrinks = [Drink]()
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-
         // Sample Data for drinkArray
         self.drinks = [Drink(category:"whiskey", name:"Old Fashioned"),
             Drink(category:"gin", name:"Martini"),
@@ -31,30 +31,26 @@ class DrinkTableViewController: UITableViewController {
         // Reload the table
         self.tableView.reloadData()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: (UITableView!)) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
-    }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.drinks.count
+        if tableView == self.searchDisplayController!.searchResultsTableView {
+            return self.filteredDrinks.count
+        } else {
+            return self.drinks.count
+        }
     }
-
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //ask for a reusable cell from the tableview, the tableview will create a new one if it doesn't have any
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
         
-        // Get the corresponding candy from our candies array
-        let drink = self.drinks[indexPath.row]
+        var drink : Drink
+        // Check to see whether the normal table or search results table is being displayed and set the Candy object from the appropriate array
+        if tableView == self.searchDisplayController!.searchResultsTableView {
+            drink = filteredDrinks[indexPath.row]
+        } else {
+            drink = drinks[indexPath.row]
+        }
         
         // Configure the cell
         cell.textLabel!.text = drink.name
@@ -62,50 +58,45 @@ class DrinkTableViewController: UITableViewController {
         
         return cell
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView!, canEditRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
+    
+    func filterContentForSearchText(searchText: String, scope: String = "All") {
+        self.filteredDrinks = self.drinks.filter({( drink : Drink) -> Bool in
+            var categoryMatch = (scope == "All") || (drink.category == scope)
+            var stringMatch = drink.name.rangeOfString(searchText)
+            return categoryMatch && (stringMatch != nil)
+        })
+    }
+    
+    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchString searchString: String!) -> Bool {
+        let scopes = self.searchDisplayController!.searchBar.scopeButtonTitles as [String]
+        let selectedScope = scopes[self.searchDisplayController!.searchBar.selectedScopeButtonIndex] as String
+        self.filterContentForSearchText(searchString, scope: selectedScope)
         return true
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    func searchDisplayController(controller: UISearchDisplayController!,
+        shouldReloadTableForSearchScope searchOption: Int) -> Bool {
+            let scope = self.searchDisplayController!.searchBar.scopeButtonTitles as [String]
+            self.filterContentForSearchText(self.searchDisplayController!.searchBar.text, scope: scope[searchOption])
+            return true
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView!, moveRowAtIndexPath fromIndexPath: NSIndexPath!, toIndexPath: NSIndexPath!) {
-
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("drinkDetail", sender: tableView)
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView!, canMoveRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "drinkDetail" {
+            let drinkDetailViewController = segue.destinationViewController as UIViewController
+            if sender as UITableView == self.searchDisplayController!.searchResultsTableView {
+                let indexPath = self.searchDisplayController!.searchResultsTableView.indexPathForSelectedRow()!
+                let destinationTitle = self.filteredDrinks[indexPath.row].name
+                drinkDetailViewController.title = destinationTitle
+            } else {
+                let indexPath = self.tableView.indexPathForSelectedRow()!
+                let destinationTitle = self.drinks[indexPath.row].name
+                drinkDetailViewController.title = destinationTitle
+            }
+        }
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
