@@ -60,10 +60,10 @@
             </objects>
             <point key="canvasLocation" x="295" y="-38"/>
         </scene>
-        <!--Drink Table View Controller-->
+        <!--View Controller-->
         <scene sceneID="hKg-o9-D7Q">
             <objects>
-                <viewController id="tC3-ea-WVe" customClass="DrinkTableViewController" customModule="barkeepr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="View Controller" id="tC3-ea-WVe" customClass="DrinkTableViewController" customModule="barkeepr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2ND-dn-UQh"/>
                         <viewControllerLayoutGuide type="bottom" id="E2P-zi-FA5"/>
